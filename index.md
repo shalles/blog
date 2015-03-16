@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Hello World!
-tagline: Supporting tagline
+title: shalles blog!
+tagline: 一切都是最好的安排
 ---
 {% include JB/setup %}
 
