@@ -38,7 +38,6 @@ window.onerror = function (errorMsg, url, lineNumber, column, errorObj) {
     console.log(errorObj);
     //发送警报什么的
 }
-}
 ```
 
 `优点`:提供的消息全面errorMsg(错误消息), url(包含错误的文件路径) lineNumber(错误所在行) column(错误所在列) errorObj(这个各浏览器实现有区别)
@@ -66,9 +65,9 @@ window.onerror = function (errorMsg, url, lineNumber, column, errorObj) {
 鉴于window.onerror的好处，我们还是要硬着头皮去解决他的跨域问题。
 资源服务器：
 
-{% highlight c %}
+```
 res.setHeader("Access-Control-Allow-Origin", "http://localhost:8088");
-{% endhighlight %}
+```
 
 在页面引入脚本的script标签中加入`crossorigin="anonymous"`
 
