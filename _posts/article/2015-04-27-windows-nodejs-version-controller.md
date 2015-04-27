@@ -4,6 +4,7 @@ category : tools
 title : "windows下管理多个版本nodejs"
 tagline: "multi nodejs version"
 tags : [node, 版本管理, windows, gnvm]
+excerpt: 工作中我们可能需要用到一些工具，但这些工具依赖不同版本的node环境，那我们需要来回的切换node的环境吗， NO, 只是因为有了GNVM
 ---
 {% include JB/setup %}
 

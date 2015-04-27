@@ -4,6 +4,7 @@ category : js
 title: "前端运行时脚本错误监控"
 tagline: "FE runtime script bug warning"
 tags : [window.onerror, 前端脚本监控, try catch]
+excerpt: 前端页面运行时脚本出错报警的问题，大体上有两种解决方案：1.使用try catch; 2.使用window.onerror;
 ---
 {% include JB/setup %}
 
