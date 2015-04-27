@@ -131,7 +131,7 @@ a:hover{
     text-overflow: ellipsis;
 }
 .posts .article-excerpt{
-    height: 42px;
+    height: 38px;
     overflow: hidden;
 }
 .posts .more{
