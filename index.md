@@ -9,6 +9,11 @@ tagline: 一切都是最好的安排
 
 <ul class="posts">
   {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+    <li>
+        <span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a>
+        <article class="rexp">
+            <p>{{ post.excerpt }}</p>
+        </article>
+    </li>
   {% endfor %}
 </ul>

@@ -1,7 +1,8 @@
 ---
 layout: post
 category : js
-tagline: "前端运行时脚本错误监控"
+title: "前端运行时脚本错误监控"
+tagline: "FE runtime script bug warning"
 tags : [window.onerror, 前端脚本监控, try catch]
 ---
 {% include JB/setup %}
