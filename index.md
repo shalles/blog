@@ -1,6 +1,6 @@
 ---
 layout: page
-title: shalles blog!
+title: shalles
 tagline: 一切都是最好的安排
 ---
 {% include JB/setup %}
@@ -27,6 +27,7 @@ tagline: 一切都是最好的安排
             <li class="say">
                 <h4>shalles say:</h4>
                 <p>just do IT, finally, finish the game engining dream</p>
+                <p>When the capacity can't meet your ambitions, please calm down to study</p>
             </li>
             <li class="recommend">
                 <h4>blog tenet:</h4>
