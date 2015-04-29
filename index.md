@@ -11,12 +11,13 @@ tagline: 一切都是最好的安排
             {% for post in site.posts %}
             <li class="article-box">
                 <div class="title">
-                    <span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a>
+                    <span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                 </div>
                 <div class="article-excerpt">
                     <span>{{ post.excerpt }}</span>
                 </div>
-                <a class="more" href="{{ BASE_PATH }}{{ post.url }}">read more</a>
+                <a class="more" href="{{ BASE_PATH }}{{ post.url }}">read more ส้้้้้้้้้้้้้้้้้้</a>
+                <div class="artible-catgory">{{ post.category }}</div>
             </li>
             {% endfor %}
         </ul>

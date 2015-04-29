@@ -84,6 +84,7 @@ h1, h2, h3, h4 {
 /*----------------------------------*/
 body{
     background-color: #fefefe;
+    color:#666;
 }
 
 ul, li{
@@ -94,18 +95,26 @@ ul, li{
 a:hover{
   color: #18BC9C
 }
-
+/*ellipsis*/
+.posts .title,
+.posts .artible-catgory{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
 .page-header h1{
     color: #666;
 }
 .container{
     margin: 0 auto;
+    font-family: cursive;
 }
 
 .posts-box, .tools-box{
     float: left;
     overflow: hidden;
 }
+
 .tools-box li, .posts li{
     padding: 16px;
     margin: 10px 5px;
@@ -116,6 +125,17 @@ a:hover{
 .posts{
     overflow: hidden;
 }
+
+.posts .artible-catgory {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 10px 20px;
+  max-width: 80px;
+  background-color: #84bbb8;
+  color: #fff;
+}
+
 .posts li{
     float: left;
     position: relative;
@@ -123,12 +143,9 @@ a:hover{
 }
 
 .posts .title{
-    padding: 2px 8px 2px 0;
+    padding: 2px 60px 2px 0;
     margin-bottom: 6px;
     border-bottom: #efefef 1px solid;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
 }
 .posts .article-excerpt{
     height: 38px;
@@ -154,6 +171,9 @@ a:hover{
 .tools-box .profile img{
     width:100%;
 }
+
+
+
 @media screen and (min-width: 1200px){ 
 /* CSS Styles */
     .container{
