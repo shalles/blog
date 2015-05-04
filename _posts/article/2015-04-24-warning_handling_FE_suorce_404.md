@@ -4,11 +4,14 @@ category : js
 title: "前端资源加载404监控解决方案一"
 tagline: "FE source 404 warning"
 tags : [suorce, 前端资源监控, 404]
-excerpt: 前端资源文件加载404,未找到资源的错误的报警。这里只提供了一种思想的简单解决方案和代码
+excerpt: 前端资源文件加载404,未找到资源的错误的报警。404可以直接在服务端获取到，这里只提供了一种前端思想的简单解决方案和代码
 ---
 {% include JB/setup %}
 
+404可以直接在服务端获取到，这里只提供了一种前端思想的简单解决方案和测试代码，解决因网络问题等导致的样式加载超时等失败。
+
 ####测试代码，具体根据自己所应用场景实现
+
 这里包含了运行时脚本错误的监控代码
 
 ```js
@@ -145,6 +148,23 @@ new WarningScriptBug({
     },
     srcDom: null,
     styleFlagDom: null,
-})
+});
+/*
+ * 下面是运行时错误检测测试
+ */
+function allNeedMonitoringCode(){
+    var dd;
+    for(dd = 1; dd < l; dd++){
+
+    }
+}
+document.body.querySelector("#cliError").addEventListener("click", clickHandler, false);
+//document.body.querySelector("#err404").addEventListener("click", click404Handler, false);
+
+//*/
+// 使用onerror
+function clickHandler(){
+    allNeedMonitoringCode();
+}
 ```
 
