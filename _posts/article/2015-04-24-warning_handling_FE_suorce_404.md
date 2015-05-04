@@ -69,7 +69,7 @@ var WarningScriptBug = (function(){
             window.scriptLoadedRegister = function(filename){
                 loadedDelete(self.sourceFileNames, filename);
             }
-            this.runtime && warningPost(this.warningCallBack, this.codeBlock);
+            this.runtime && this.warningPost(this.codeBlock);
             this.src404 && this.ensureSourceLoaded();
         },
 
@@ -132,12 +132,11 @@ var WarningScriptBug = (function(){
     return WarningScriptBug;
 })();
 
-//使用
 new WarningScriptBug({
     src404: true,
     runtime: true,
     srcfileNames: ["index2.js", "subscript.js","site.css", "sub1.css", "sub2.css"],
-    warningPost: function(e){ //parameter: errorObj, message, filename, lineno, colno, stackTrace
+    warningCallBack: function(e){ //parameter: errorObj, message, filename, lineno, colno, stackTrace
         alert('Show Error by Alert: \nmessage:' + e.message + '\nfilename: ' + e.filename + '\nLine: ' + e.lineno
                     + '\nColumn: ' + e.colno + '\nStackTrace: ' +  e.error.stack);
             console.log('\nShow Error in Console: \nmessage:' + arguments[1] + '\nfilename: ' + 
