@@ -28,7 +28,7 @@ try{
 `缺点`：消息单一，只提供错误，如xx未定义
 如图：
 
-![控制台打出errorObj]({{ BASE_PATH }}/assets/images/20150423213101.jpg)
+![控制台打出errorObj]({{ BASE_PATH }}/assets/images/warning/20150423213101.jpg)
 
 ####使用window.onerror
 大概是这样的
@@ -45,19 +45,19 @@ window.onerror = function (errorMsg, url, lineNumber, column, errorObj) {
 `优点`:提供的消息全面errorMsg(错误消息), url(包含错误的文件路径) lineNumber(错误所在行) column(错误所在列) errorObj(这个各浏览器实现有区别)
 如图：
 
-![控制台打出errorObj]({{ BASE_PATH }}/assets/images/20150423213143.jpg)
+![控制台打出errorObj]({{ BASE_PATH }}/assets/images/warning/20150423213143.jpg)
 
 特别是最后一个参数errorObj这里面包含了调用栈的信息和具体错误。
 如下图：控制台打出errorObj
 
-![控制台打出errorObj]({{ BASE_PATH }}/assets/images/20150423213229.jpg)
+![控制台打出errorObj]({{ BASE_PATH }}/assets/images/warning/20150423213229.jpg)
 
 `缺点`：有跨域的问题
 
 ####这里问什么有跨域问题的出现
 一般情况下为了减少cookies等我们的资源文件（这里就说js了）没有与页面放在同一个域`origin`下。在这种情况下浏览器为安全考虑会做一些限制，如在`window.onerror`中（window ）：出现脚本运行时错误时，他只提供了`errorMsg`参数的有效值（且此值的描述比`try catch`要简单返回`textScript error`），其他的则返回空。而`try catch`不受这一限制（返回的值不变但依旧描述信息不全）。
 
-![控制台打出errorObj]({{ BASE_PATH }}/assets/images/20150423213540.jpg)
+![控制台打出errorObj]({{ BASE_PATH }}/assets/images/warning/20150423213540.jpg)
 
 ####为了使用window.error的调用栈解决跨域
 知道错误所在行列都不重要，因为运行时的错误很多是很难重现的，可能不同用户从不同共能过来，同样的代码参数不同也同样会引起脚本错误。
