@@ -135,7 +135,7 @@ excerpt: 在fiddler QuickExec让你的fiddler更便捷, 用命令提高你的工
 
 **`g` or `go`**
 
-与[fiddler网络调试神器（前端）——擦肩而过](/tools/fiddler/2015/02/08/tools-fiddler-profile/)中`@Go越过断点`描述的一致，清除所有被卡在断点的会话的断点，放其继续执行。
+与[fiddler网络调试神器（前端）——擦肩而过]({{ BASE_PATH }}/tools/fiddler/2015/02/08/tools-fiddler-profile/)中`@Go越过断点`描述的一致，清除所有被卡在断点的会话的断点，放其继续执行。
 
     g
 

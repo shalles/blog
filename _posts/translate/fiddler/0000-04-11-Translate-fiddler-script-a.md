@@ -10,7 +10,7 @@ excerpt: 在fiddlerScript让你的fiddler更贴心, fiddlerScript之修改一个
 
 ##Modifying a Request or Response
 
-用户可以在FiddlerScript的OnBeforeRequest和 OnBeforeResponse函数中修改请求头和响应头. 即前面文章中说到的[request断点和response断点实现的功能](/tools/fiddler/2015/05/18/tools-fiddler-function-list)
+用户可以在FiddlerScript的OnBeforeRequest和 OnBeforeResponse函数中修改请求头和响应头. 即前面文章中说到的[request断点和response断点实现的功能]({{ BASE_PATH }}/tools/fiddler/2015/05/18/tools-fiddler-function-list)
 
 注意：你不可能在请求发送之前即在OnBeforeRequest函数中使用response对象的属性，因为此时他还没有被创建。
 但你可以在response返回到应用程序之前即OnBeforeResponse函数中使用
