@@ -17,7 +17,7 @@ tagline: 一切都是最好的安排
                     <span>{{ post.excerpt }}</span>
                 </div>
                 <a class="more" href="{{ BASE_PATH }}{{ post.url }}">read more ส้้้้้้้้้้้้้้้้้้</a>
-                <div class="artible-catgory">{{ post.category }}</div>
+                <div class="artible-catgory" title="{{ post.category }}">{{ post.category }}</div>
             </li>
             {% endfor %}
         </ul>

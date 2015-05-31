@@ -1,0 +1,20 @@
+Navigated to http://localhost/Demo7/
+-------分隔符--------
+fn1 called width param shalles_1, undefined
+-------分隔符--------
+fn2 called width param shalles_1, undefined
+fn4 called width param shalles_1, undefined
+fn6 called width param shalles_1, undefined
+fn1 called width param shalles_2, shalles_4
+fn2 called width param shalles_2, shalles_4
+fn4 called width param shalles_2, shalles_4
+fn6 called width param shalles_2, shalles_4
+-------分隔符--------
+fn3 called width param shalles_2, shalles_4
+fn5 called width param shalles_2, shalles_4
+fn1 called width param shalles_3, shalles_5
+fn2 called width param shalles_3, shalles_5
+fn4 called width param shalles_3, shalles_5
+fn6 called width param shalles_3, shalles_5
+fn3 called width param shalles_3, shalles_5
+fn5 called width param shalles_3, shalles_5

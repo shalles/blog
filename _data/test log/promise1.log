@@ -1,0 +1,55 @@
+function asyncEvent() {
+  var dfd = jQuery.Deferred();
+ 
+  // Resolve after a random interval
+  setTimeout(function() {
+    dfd.resolve( "hurray" );
+  }, Math.floor( 400 + Math.random() * 2000 ) );
+ 
+  // Reject after a random interval
+  setTimeout(function() {
+    dfd.reject( "sorry" );
+  }, Math.floor( 400 + Math.random() * 2000 ) );
+ 
+  // Show a "working..." message every half-second
+  setTimeout(function working() {
+    if ( dfd.state() === "pending" ) {
+      dfd.notify( "working... " );
+      setTimeout( working, 500 );
+    }
+  }, 1 );
+ 
+  // Return the Promise so caller can't change the Deferred
+  return dfd;//dfd.promise();
+}
+ 
+// Attach a done, fail, and progress handler for the asyncEvent
+$.when( asyncEvent() ).then(
+  function( status ) {
+    console.log("1-1: ",  status + ", things are going well" );
+  },
+  function( status ) {
+    console.log("1-2: ", status + ", you fail this time" );
+  },
+  function( status ) {
+    console.log("1-3: ", status);
+  }
+).then(
+  function(status){
+    console.log("2-1: ", status);
+},function(status){
+    console.log("2-2: ", status);
+},function(status){
+    console.log("2-3: ", status);
+});
+Object {state: function, always: function, then: function, promise: function, pipe: function…}
+1-3:  working... 
+2-3:  undefined
+1-3:  working... 
+2-3:  undefined
+1-3:  working... 
+2-3:  undefined
+1-3:  working... 
+2-3:  undefined
+1-2:  sorry, you fail this time
+2-2:  undefined

@@ -1,8 +1,8 @@
 ---
 layout: post
-category : tools
+category : Tools
 title : "windows下管理多个版本nodejs"
-tagline: "multi nodejs version"
+tagline: "利其器"
 tags : [node, 版本管理, windows, gnvm]
 excerpt: 工作中我们可能需要用到一些工具，但这些工具依赖不同版本的node环境，那我们需要来回的切换node的环境吗， NO, 只是因为有了GNVM
 ---
@@ -14,7 +14,7 @@ excerpt: 工作中我们可能需要用到一些工具，但这些工具依赖�
 Node.js version manager on Windows by GO
 (一个windows上用Go语言实现的node版本管理工具)
 
-![gnvm的设计]({{ BASE_PATH }}/assets/images/article/node/gnvm.png)
+![gnvm的设计]({{ BASE_PATH }}/assets/images/node/gnvm.png)
 
 ####怎样获取
 - 下载
