@@ -19,11 +19,11 @@ excerpt: 敬请期待 预计5.23号完成
 
 如图从上到下一次是
 
-1.`Capture Traffic`:捕获会话通信开关 与[fiddler擦肩而过](/tools/fiddler/2015/02/08/tools-fiddler-profile/#Capturing)描述一致
+1.`Capture Traffic`:捕获会话通信开关 与[fiddler擦肩而过]({{ BASE_PATH }}/tools/fiddler/2015/02/08/tools-fiddler-profile/#Capturing)描述一致
 
 2.`New Viewer`:新开一个只能导入并查看fiddler导出的会话的fiddler查看器
 
-3.`Load/Recent archive`: 加载或打开最近导出的[`.saz`数据文件](/tools/fiddler/2015/05/18/tools-fiddler-function-list/#saz)中索引3
+3.`Load/Recent archive`: 加载或打开最近导出的[`.saz`数据文件]({{ BASE_PATH }}/tools/fiddler/2015/05/18/tools-fiddler-function-list/#saz)中索引3
 
 4.`Import/Export Sessions`:导入或导出会话数据
 
@@ -39,7 +39,7 @@ excerpt: 敬请期待 预计5.23号完成
 
 2.`Mark`:用各种颜色标记选中会话
 
-3.`Unlock for Editing`: 解锁选中会话的编辑功能，解锁后可以在[Inspectors](/tools/fiddler/2015/02/08/tools-fiddler-profile/#Inspectors)中自由的编辑会话内容并保存，可编辑的会话对应图标为
+3.`Unlock for Editing`: 解锁选中会话的编辑功能，解锁后可以在[Inspectors]({{ BASE_PATH }}/tools/fiddler/2015/02/08/tools-fiddler-profile/#Inspectors)中自由的编辑会话内容并保存，可编辑的会话对应图标为
 ![可编辑会话]({{ BASE_PATH }}/assets/images/tools/fiddler/20150519141434.jpg)
 
 4.`Find Session`:关键字匹配查找需要的session
@@ -54,9 +54,9 @@ excerpt: 敬请期待 预计5.23号完成
 
 1.`Hide Image Requests/Hide CONNECTs`:隐藏图片请求/
 
-2.<a id="automaticBreakpoint">`Automatic Breakpoint`</a>:就是[request断点和response断点](/tools/fiddler/2015/05/18/tools-fiddler-function-list/#beforeRequest)
+2.<a id="automaticBreakpoint">`Automatic Breakpoint`</a>:就是[request断点和response断点]({{ BASE_PATH }}/tools/fiddler/2015/05/18/tools-fiddler-function-list/#beforeRequest)
 
-3.<a id="customizeRules">`Customize Rules`</a>: 点击会弹出一个Fiddler ScriptEditor, 这里提供了用户通过UI界面设置和Fiddler默认参数的脚本配置，右边是Fiddler提供的一些可用的对象及方法的参考。与FiddlerScript[FiddlerScript](/tools/fiddler/2015/02/08/tools-fiddler-profile/#FiddlerScript)中提供了类似的编辑功能。比如在这里你可以看到你设置的模拟modem网速的配置是在OnBeforeReques钩子方法中添加如下代码判断，UI在`Rules->Performance->Simulate Modem Speeds`,默认情况下request请求发送是300ms/KB, response响应是150ms/KB。当然你阔以自由的修改。
+3.<a id="customizeRules">`Customize Rules`</a>: 点击会弹出一个Fiddler ScriptEditor, 这里提供了用户通过UI界面设置和Fiddler默认参数的脚本配置，右边是Fiddler提供的一些可用的对象及方法的参考。与FiddlerScript[FiddlerScript]({{ BASE_PATH }}/tools/fiddler/2015/02/08/tools-fiddler-profile/#FiddlerScript)中提供了类似的编辑功能。比如在这里你可以看到你设置的模拟modem网速的配置是在OnBeforeReques钩子方法中添加如下代码判断，UI在`Rules->Performance->Simulate Modem Speeds`,默认情况下request请求发送是300ms/KB, response响应是150ms/KB。当然你阔以自由的修改。
 
 1. 
     ```js
@@ -166,7 +166,7 @@ excerpt: 敬请期待 预计5.23号完成
 
     Monitor all connections:监控所有链接
 
-    [这里可以看到移动端连接到Fiddler服务器的例子](/tools/fiddler/2015/02/08/tools-fiddler-profile/#mobile)
+    [这里可以看到移动端连接到Fiddler服务器的例子]({{ BASE_PATH }}/tools/fiddler/2015/02/08/tools-fiddler-profile/#mobile)
 
 
     d. <a id="Gateway">**Gateway**</a>
@@ -201,7 +201,7 @@ excerpt: 敬请期待 预计5.23号完成
 
 4.<a id="ConfigAutoSave">`Config AutoSave`</a>:
 
-自动保存Fiddler的配置文件，点击后在[fiddler擦肩而过中`3/4`](/tools/fiddler/2015/02/08/tools-fiddler-profile)框中出现如下图所示的panel,可以设置自动保存的时间间隔或只保存会话的请求和响应头信息
+自动保存Fiddler的配置文件，点击后在[fiddler擦肩而过中`3/4`]({{ BASE_PATH }}/tools/fiddler/2015/02/08/tools-fiddler-profile)框中出现如下图所示的panel,可以设置自动保存的时间间隔或只保存会话的请求和响应头信息
 
 1. 
     ![Tools]({{ BASE_PATH }}/assets/images/tools/fiddler/20150519163452.jpg)
