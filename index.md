@@ -13,6 +13,11 @@ tagline: 一切都是最好的安排
                 <div class="title">
                     <span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                 </div>
+                {% if post.img %}
+                <div class="article-img">
+                    <img src="{{ BASE_PATH }}{{post.img.url}}" alt="{{post.img.alt}}">
+                </div>
+                {% endif %}
                 <div class="article-excerpt">
                     <span>{{ post.excerpt }}</span>
                 </div>
