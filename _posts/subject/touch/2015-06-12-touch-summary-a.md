@@ -52,7 +52,7 @@ excerpt: 移动时代的到来，
 ---
 
 ###大部分问题阔以通过下面的模拟调试找到答案
-####<a id="chrome_debug"></a>Chrome Debug
+####<a id="chrome_debug"></a>Chrome Debug 
 
 **Android机**
 
@@ -72,6 +72,8 @@ excerpt: 移动时代的到来，
 
 - 然后就像在pc上愉快的调试手机上的页面了
 
+[Chrome Debug详情请看]({{ BASE_PATH }}/touch/debug/2015/06/27/touch-debug/#chrome_debug)
+
 ####<a id="safari_debug"></a>Safari Debug
 
 **IOS设备**
@@ -90,6 +92,8 @@ excerpt: 移动时代的到来，
 - 就是这么简单，愉快的查bug吧
 
 ![Alt text]({{ BASE_PATH }}/assets/images/safari/20150627-4.png)
+
+[Safari Debug详情请看]({{ BASE_PATH }}/touch/debug/2015/06/27/touch-debug/#safari_debug)
 
 
 ####代码兼容（这一块未完待续）
@@ -114,3 +118,13 @@ excerpt: 移动时代的到来，
 - 给input指定对应类型，这样可以唤起输入法的对应键盘，如`input[type=number]`可以在焦点的时候唤起九宫格输入面板
 
 - 尽情使用语义化标签
+
+###小知识
+
+**PPI:** 
+>像素密度。每英寸物理屏幕上包含的css像素点的个数   [PPI对照表](http://screensiz.es/phone) 
+
+**viewport**
+>移动页面有两个viewport
+    - `layout viewport` 文档原始布局，不随屏幕转动或放缩而变化
+    - `virtual viewport`页面可视区域，可视区域会随缩放旋转移动的变化而变化的 
