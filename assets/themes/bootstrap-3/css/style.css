@@ -148,8 +148,8 @@ a:hover {
 }
 .posts li {
     float: left;
-    min-height: 140px;
-    max-height: 480px;
+    min-height: 146px;
+    max-height: 312px;
     position: relative;
     border-radius: 0 10px 0 0;
 }
