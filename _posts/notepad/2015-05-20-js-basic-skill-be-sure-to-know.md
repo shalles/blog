@@ -33,3 +33,7 @@ false
 true
 ```
 
+####兼容于ASCII和ISO标准的Unicode编码
+
+>Unicode的UTF-8编码与ASCII字符是兼容，并且被许多程序所支持。前128个Unicode字符与ASCII字符一一对应，并具有相同的字节值。从U+0020至U+007E的Unicode字符等价于从0x20到0x7E的ASCII字符。ASCII支持拉丁字母并使用7位字符集，而UTF-8的每个字符占用一到四个8位组(8位组octet，即1个字节或8位)，这样可以表示数百万个字符。另一种编码标准，UTF-16，使用两个字节来表示Unicode字符。转义序列允许UTF-16用4个8位组表示Unicode字符， ISO UCS-2（通用字符集）则使用两个字节。
+
