@@ -10,9 +10,9 @@ excerpt: 调试是定位bug完善程序的最佳实践，移动时代里touch端
 
 
 
-####<a id="chrome_debug"></a>Chrome Debug
+###<a id="chrome_debug"></a>Chrome Debug
 
-**Android机**
+####Android机
 
 - 首先你得手机需要安装chrome浏览器>32，你的Android >4
 - 打开usb调试
@@ -30,9 +30,16 @@ excerpt: 调试是定位bug完善程序的最佳实践，移动时代里touch端
 
 - 然后就像在pc上愉快的调试手机上的页面了
 
-####<a id="safari_debug"></a>Safari Debug
+**对于native app中的webview的调试**
 
-**IOS设备**
+不适用其他工具或脚本的情况下需要android4.4后的系统才支持。
+具体整理中...
+
+
+###<a id="safari_debug"></a>Safari Debug
+
+
+####IOS设备
 
 - 打开mac上的safari浏览器
 - 进入偏好设置`->`高级`->`
@@ -49,3 +56,6 @@ excerpt: 调试是定位bug完善程序的最佳实践，移动时代里touch端
 
 ![Alt text]({{ BASE_PATH }}/assets/images/safari/20150627-4.png)
 
+**对于如微信等app中的webview的调试**
+
+整理中...
