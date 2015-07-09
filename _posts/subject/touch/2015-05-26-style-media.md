@@ -12,6 +12,28 @@ excerpt: 通过css的media来实现对不同媒介、设备定制不同适配样
 media是css2加入的样式规则，通过media查询可以对不同的尺寸，类别的设备加以不同的样式匹配。
 media由两部分组成：media type和media query
 
+####语法
+
+```js
+media_query_list: <media_query> [, <media_query> ]*
+media_query: [[only | not]? <media_type> [ and <expression> ]*]
+  | <expression> [ and <expression> ]*
+expression: ( <media_feature> [: <value>]? )
+media_type: all | aural | braille | handheld | print |
+  projection | screen | tty | tv | embossed
+media_feature: width | min-width | max-width
+  | height | min-height | max-height
+  | device-width | min-device-width | max-device-width
+  | device-height | min-device-height | max-device-height
+  | aspect-ratio | min-aspect-ratio | max-aspect-ratio
+  | device-aspect-ratio | min-device-aspect-ratio | max-device-aspect-ratio
+  | color | min-color | max-color
+  | color-index | min-color-index | max-color-index
+  | monochrome | min-monochrome | max-monochrome
+  | resolution | min-resolution | max-resolution
+  | scan | grid
+```
+
 **<a href="http://www.w3.org/TR/CSS21/media.html#media-types">media type</a>**:
 
 - all: 匹配所有设备
@@ -24,6 +46,311 @@ media由两部分组成：media type和media query
 - speech: 匹配屏幕阅读器页面
 - tty: 无像素屏幕匹配的打字机，终端机等
 - tv: 电视机类型的设备
+
+如果没有明确指定Media Type，那么其默认all
+
+```html
+<link rel="stylesheet" type="text/css" media="(min-width: 600px) and (max-width: 900px)" href="medium.css" />
+```
+
+**<a href="http://www.w3.org/TR/CSS21/media.html#media-types">media query属性</a>**:
+
+media query是media type的扩展
+
+使用逗号`,`表示或，`and`表示与，`only`表示唯一性（只满足），`not`表示非，可以混合使用，如下面的例子（可能很诡异，只是个例子）
+
+```css
+@media (only screen and (min-width:960px)), handheld and (max-width:480px), (not tv) and (color) {
+    /*匹配查询条件
+    只有是屏幕的时候宽度大于等于960px的
+    或手持设备并且宽度小于等于480px的
+    或不是tv的设备是有色的
+    的样式*/
+}
+```
+
+`only`: 用来指定某种特定的媒体类型，可以用来排除不支持媒体查询的浏览器。
+
+only很多时候是用来对那些不支持Media Query但却支持Media Type的设备隐藏样式表的。
+
+其主要有：
+
+- 支持媒体特性（Media Queries）的设备，正常调用样式，此时就当only不存在；
+
+- 对于支持媒体类型(Media Type)而不支持媒体特性(Media Queries)的设备，only可以只判断当前media type是否为真而是都采用后续样式；
+
+- 对于不支持Media Qqueries的浏览器，不论是否支持only，样式都不会被采用。
+
+---
+
+大多数媒体属性带有“min-”和“max-”前缀，用于表达“大于等于”和“小于等于”。如果未指定属性的值，并且该属性的实际值不为零，则该表达式被解析为真。
+
+**宽高比（aspect-ratio）**
+
+>
+值：`<ratio>比例`
+媒体： `visual, tactile`
+min/max 前缀：`是`
+
+描述了输出设备目标显示区域的宽高比。该值包含两个以“/”分隔的正整数。代表了水平像素数（第一个值）与垂直像素数（第二个值）的比例。
+
+*示例*
+
+下面为显示区域宽高至少为一比一的设备选择了一个特殊的样式表。`数学分数比较`
+
+```css
+@media screen and (min-aspect-ratio: 1/1) { }
+```
+
+这指定了宽高比或者1：1或者更大。换句话说，可视区域或者是正方形或者是宽屏。
+
+**颜色（color）**
+
+>
+值： `<color>`
+媒体： `visual`
+min/max 前缀：`是`
+
+指定输出设备每个像素单元的比特值。如果设备不支持输出颜色，则该值为0。
+
+注意：如果每个颜色单元具有不同数量的比特值，则使用最小的。例如，如果显示器为蓝色和红色提供5比特，而为绿色提供6比特，则认为每个颜色单元有5比特。如果设备使用索引颜色，则使用颜色表中颜色单元的最小比特数。
+
+*示例*
+
+向所有能显示颜色的设备应用样式表：
+
+```css
+@media all and (color) { }
+```
+
+向每个颜色单元至少有4个比特的设备应用样式表：`rgba(255,255,255,255)`
+
+```css
+@media all and (min-color: 4) { }
+```
+
+**颜色索引（color-index）**
+
+>
+值：`<integer>`
+媒体：` visual`
+min/max 前缀：`是`
+
+指定了输出设备中颜色查询表中的条目数量。
+
+*示例*
+
+向所有使用索引颜色的设备应用样式表，你可以这么做：
+
+```css
+@media all and (color-index) { }
+```
+
+向所有使用至少256个索引颜色的设备应用样式表：`?解释索引颜色`
+
+```html
+<link rel="stylesheet" media="all and (min-color-index: 256)" href="http://foo.bar.com/stylesheet.css" />
+```
+
+**设备宽高比（device-aspect-ratio）**
+
+>
+值：`<ratio>`
+媒体：`visual, tactile`
+min/max 前缀：`是`
+
+描述了输出设备的宽高比。值与`aspect-ratio`相同。
+
+*示例*
+
+下面为宽屏设备选择了一个特殊的样式表。
+
+```
+@media screen and (device-aspect-ratio: 16/9), screen and (device-aspect-ratio: 16/10) { }
+```
+
+宽高比或者16：9或者16：10。
+
+**设备高度(device-width) **
+
+>
+值：`<length>`
+媒体：`visual, tactile`
+min/max 前缀：`是`
+
+描述了输出设备的高度（整个屏幕或页的高度，而不是仅仅像文档窗口一样的渲染区域）。
+
+*示例*
+
+向显示在最大宽度800px的屏幕上的文档应用样式表，你可以这样做：
+
+```html
+<link rel="stylesheet" media="screen and (max-device-width: 799px)" />
+```
+
+**设备宽度(device-height) **
+
+>
+值：`<length>`
+媒体： `visual, tactile`
+min/max 前缀：`是`
+
+描述了输出设备的宽度（整个屏幕或页的高度，而不是仅仅像文档窗口一样的渲染区域）。
+
+```html
+<link rel="stylesheet" media="screen and (min-device-height: 799px)" />
+```
+
+**网格（grid）**
+
+>
+值：`<integer>`
+媒体：`all`
+min/max 前缀： `否`
+
+判断输出设备是网格设备还是位图设备。如果设备是基于网格的（例如电传打字机终端或只能显示一种字形的电话），该值为1，否则为0。
+
+*示例*
+
+向一个15字符宽度或更窄的手持设备应用样式：
+
+```css
+@media handheld and (grid) and (max-width: 15em) { }
+```
+
+注意：`em` 在网格设备中有不同的意义；一个`em`的实际宽度不得而知，假设1em相当于一个网格单元的宽高。
+`?css中的是当前样式规则中的字体的大小`
+
+**高度（height）**
+
+>
+值：`<length>`
+媒体：`visual, tactile`
+min/max 前缀：`是`
+
+height 媒体属性描述了输出设备渲染区域（如可视区域的高度或打印机纸盒的高度）的高度。
+
+```css
+@media handheld and (grid) and (min-height: 15em) { }
+```
+
+
+**黑白（monochrome）**
+
+>
+值：`<integer>`
+媒体： `visual`
+min/max 前缀：`是`
+
+指定了一个黑白（灰度）设备每个像素的比特数。如果不是黑白设备，值为0。
+
+*示例*
+
+向所有黑白设备应用样式表：
+
+```css
+@media all and (monochrome) { }
+```
+
+向每个像素至少8比特的黑白设备应用样式表：
+
+```css
+@media all and (min-monochrome: 8) { }
+```
+
+**方向（orientation）**
+
+>
+值：`landscape 横屏 | portrait 竖屏`
+媒体：`visual`
+min/max 前缀：`否`
+
+指定了设备处于横屏（宽度大于宽度）模式还是竖屏（高度大于宽度）模式。
+
+*示例*
+
+向竖屏设备应用样式表：
+
+```css
+@media all and (orientation: portrait) { }
+```
+
+**分辨率（resolution）**
+
+>
+值： `<resolution>`
+媒体： `bitmap`
+min/max 前缀：`是`
+
+指定输出设备的分辨率（像素密度`dppx`）。分辨率可以用每英寸`dpi`或每厘米`dpcm`的点数来表示。
+
+*示例*
+
+为每英寸至多300点的打印机应用样式：
+
+```css
+@media print and (min-resolution: 300dpi) { }
+```
+
+替换老旧的 (min-device-pixel-ratio: 2) 语法：
+
+```css
+@media screen and (min-resolution: 2dppx) { }
+```
+
+**扫描（scan）**
+
+>
+值： `progressive | interlace`
+媒体：`tv`
+min/max 前缀：`否`
+
+描述了电视输出设备的扫描过程。
+
+*示例*
+
+向以顺序方式扫描的电视机上应用样式表：
+
+```css
+@media tv and (scan: progressive) { }
+```
+
+**宽度（width）**
+
+>
+值： `<length>`
+媒体： `visual, tactile`
+min/max 前缀：`是`
+
+width 媒体属性描述了输出设备渲染区域（如可视区域的宽度或打印机纸盒的宽度）`viewport`的宽度。
+
+如果你想向最小宽度20em的手持设备或屏幕应用样式表，你可以使用这样的查询：
+
+```css
+@media handheld and (min-width: 20em), screen and (min-width: 20em) { }
+``` 
+
+这个媒体查询将向最小宽度8.5英寸的打印机应用样式表：
+
+```html
+<link rel="stylesheet" media="print and (min-width: 8.5in)"
+    href="http://foo.com/mystyle.css" />
+```
+
+
+这个查询适用于宽度在500px和800px之间的屏幕：
+
+```css
+@media screen and (min-width: 500px) and (max-width: 800px) { }
+```
+
+
+
+`引:`以上media属性内容截自https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries
+
+---
+
+
 
 ###使用方式
 
@@ -39,7 +366,7 @@ media由两部分组成：media type和media query
 <style media="screen and ..."></style>
 ```
 
-**@media**
+**css文件中 @media**
 
 ```css
 @media screen and ... {
@@ -57,39 +384,7 @@ media由两部分组成：media type和media query
 
 
 ###`<link rel="stylesheet"/>`
-####一、最大宽度`Max Width`
-
-```html
-<link rel="stylesheet" type="text/css" media="screen and (max-width:320px)" href="lte320.css" />
-```
-
-当屏幕`<=320px`时，将引入lte320.css的样式。
-
-####二、最小宽度`Min Width`
-
-```html
-<link rel="stylesheet" type="text/css" media="screen and (min-width:900px)" href="gte.css" />
-```
-
-当屏幕`>=900px`时，将引入gte.css的样式。
-
-####三、多个Media Queries使用
-
-```html
-<link rel="stylesheet" type="text/css" media="screen and (min-width:600px) and (max-width:900px)" href="style.css" />
-```
-
-Media Query可以结合多个媒体查询，换句话说，一个Media Query可以包含0到多个表达式，表达式又可以包含0到多个关键字，以及一种Media Type。正如上面表示的是当屏幕在600px-900px之间时采用style.css样式来渲染web页面。
-
-####四、设备屏幕的输出宽度Device Width
-
-```html
-<link rel="stylesheet" type="text/css" media="screen and (max-device-width: 480px)" href="iphone.css" />
-```
-
-上面的代码指的是iphone.css样式适用于最大设备宽度为480px，比如说iPhone上的显示，这里的max-device-width所指的是设备的实际分辨率，也就是指可视面积分辨率
-
-####五、iPhone4
+####iPhone4
 
 ```html
 <link rel="stylesheet" type="text/css" media="only screen and (-webkit-min-device-pixel-ratio: 2)" href="iphone4.css" />
@@ -97,95 +392,17 @@ Media Query可以结合多个媒体查询，换句话说，一个Media Query可�
 
 上面的样式是专门针对iPhone4的移动设备写的。
 
-####六、iPad 屏幕纵向(orientation:portrait)，横向(orientation:landscape)
+####iPad 屏幕纵向(orientation:portrait)，横向(orientation:landscape)
+
+ipad与iphone不同之处是`iPad声明了不同的方向`，可如下处理
 
 ```html
 <link rel="stylesheet" type="text/css" media="all and (orientation:portrait)" href="portrait.css" /><link rel="stylesheet" type="text/css" media="all and (orientation:landscape)" href="landscape.css" />
 ```
 
-在大数情况下，移动设备iPad上的Safari和在iPhone上的是相同的，只是他们不同之处是iPad声明了不同的方向，比如说上面的例子，在纵向portrait时采用portrait.css来渲染页面；在横向landscape时采用landscape.css来渲染页面。
-
-####七、android
-
-/*240px的宽度*/
-
-```html
-<link rel="stylesheet" type="text/css" media="only screen and (max-device-width:240px)" href="android240.css" />
-```
-
-/*360px的宽度*/
-
-```html
-<link rel="stylesheet" type="text/css" media="only screen and (min-device-width:241px) and (max-device-width:360px)" href="android360.css />
-```
-
-/*480px的宽度*/
-
-```html
-<link rel="stylesheet" type="text/css" media="only screen and (min-device-width:361px) and (max-device-width:480px)" href="android480.css" />
-```
-
-我们可以使用media query为android手机在不同分辨率提供特定样式，这样就可以解决屏幕分辨率的不同给android手机的页面重构问题。
-
-####八、not关键字
-
-```html
-<link rel="stylesheet" type="text/css" media="not print and (max-width: 1200px)" href="print.css" />
-```
-
-not关键字是用来排除某种制定的媒体类型，换句话来说就是用于排除符合表达式的设备。
-
-####九、only关键字
-
-```html
-<link rel="stylesheet" type="text/css" media="only screen and (max-device-width:240px)" href="android240.css" />
-```
-
-only用来定某种特定的媒体类型，可以用来排除不支持媒体查询的浏览器。其实only很多时候是用来对那些不支持Media Query但却支持Media Type的设备隐藏样式表的。其主要有：支持媒体特性（Media Queries）的设备，正常调用样式，此时就当only不存在；对于不支持媒体特性(Media Queries)但又支持媒体类型(Media Type)的设备，这样就不会读样式了，因为其先读only而不是screen；另外不支持Media Qqueries的浏览器，不论是否支持only，样式都不会被采用。
-
-####十、注意
-
-在Media Query中如果没有明确指定Media Type，那么其默认all，如：
-
-```html
-<link rel="stylesheet" type="text/css" media="(min-width: 701px) and (max-width: 900px)" href="medium.css" />
-```
-
-另外还有使用逗号（，）被用来表示并列或者表示或，如下
-
-```html
-<link rel="stylesheet" type="text/css" href="style.css" media="handheld and (max-width:480px), screen and (min-width:960px)" />
-```
-
-上面代码中style.css样式被用在宽度小于或等于480px的手持设备上，或者被用于屏幕宽度大于或等于960px的设备上。
 
 
-
-###CSS文件中@media引入使用max-width
-
-```css
-@media screen and (max-width: 600px) {
-/* CSS Styles */
-}
-```
-
-####一、使用min-width
-
-```css
-@media screen and (min-width: 900px) {
-/* CSS Styles */
-}
-```
-
-####二、max-width和min-width的混合使用
-
-```css
-@media screen and (min-width: 600px) and (max-width: 900px) {
-/* CSS Styles */
-}
-```
-
-####三、同时CSS3 Media Queries还能查询设备的宽度device-width来判断样式的调用，这个主要用在iPhone,iPads设备上，比如像下面的应用：
+####CSS3 Media Queries还能查询设备的宽度device-width来判断样式的调用，这个主要用在iPhone,iPads设备上，比如像下面的应用：
 
 **iPhone和Smartphones上的运用**
 
@@ -195,30 +412,12 @@ only用来定某种特定的媒体类型，可以用来排除不支持媒体查�
 }
 ```
 
-四、max-device-width指的是设备整个渲染区宽度（设备的实际宽度），而 max-width 指的是可视区域分辨率。
+####移动touch
 
-**iPad上的运用**
+max-device-width指的是设备整个渲染区宽度（设备屏幕实际可渲染宽度），而 max-width 指的是viewport可视区域分辨率。
 
-```
-/* iPads (landscape) */@media screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
-/* CSS Styles */
-}
-/* iPads (portrait) */@media screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
-/* CSS Styles */
-}
-```
-
-针对移动设备的运用，如果你想让样式工作得比较正常，需要在“”添加viewport的meta标签
+针对移动设备需要在head中添加viewport的meta。指定宽度为设备宽度，否则将像PC端那样按实际像素渲染。
 
 ```html
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
 ```
-
-上面针对不同的分辨率，不同的移动设备类型做了不同定义，可能我们在实际的使用中用不着这么详细的去区分不同的设备。
-
-比如针对电脑访问的就制定一个大于800到1280，超过1280的，就显示一个大分类的样式
-
-
-
-
-
