@@ -151,10 +151,17 @@ excerpt: 写惯了PC前端，移动端开发可能会然你更爽，html5/css3�
 ```
 
 width: [pexel_value|device-width] viewport的宽度`[200, 10000]`，默认980px
+
 height: [pexel_value|device-width] viewport的高度`[223,10000]`
+
 initial-scale: float_value初始的缩放比例`(0，10]`
+
 minimum-scale: float_value 可缩小比例临界值
+
 maximum-scale: float_value 可放大比例临界值
+
 user-scalable: [`yes`|`no`] 允许用户手动缩放
+
 target-densitydpi: [`dpi_value`|`device-dpi`|`high-dpi`|`medium-dpi`|`low-dpi`] 目标屏幕的像素密度
+
 minimal-ui: ios7.x safari中添加的隐藏地址栏和导航栏
