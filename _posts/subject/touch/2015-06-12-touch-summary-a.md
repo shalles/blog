@@ -11,28 +11,30 @@ excerpt: 移动时代的到来，
 ###基础
 ####摘要
 
-- 一台阔以配置host的路由器（eg. 极路由：装host插件）
+- 一台阔以配置host的路由器（eg. 极路由：装host插件）开发时可以用电脑开启[无线热点](）
 - 安装chrome(android)/safari(ios) [chrome调试](#chrome_debug)，[safari调试](#safari_debug)
+
 
 ####<a id="os"></a>准备
 
 **`系统`**
 
 - ios 6-9
-- android 4.1-4.4/5(低版本再考虑)
+- android 4.1-4.4/5(低版本再考虑 2.3)  
 - wp(可以考虑)
 
 **`浏览器`**
 
 - android/ios自带浏览器
 - Android UC QQ 百度浏览器
-- Android/ios Chrome  微信/App WebView
+- Android/ios Chrome  QQ/微信/App WebView
 
 **`设备(常见问题设备)`**
 
 - 华为荣耀系列
-- 小米 3
-- iPhone4(ios 6)
+- 小米 2/3/4 (style) 自带浏览器（图片叠加）
+- 魅族 4.x （展示缺省，翻页后键盘不自动关闭，微信的头覆盖）
+- iPhone4/ipod(ios 6)
 - 三星S4/5 Galaxy 2/3
 
 **`屏幕分辨率`**
@@ -49,6 +51,16 @@ excerpt: 移动时代的到来，
 
 记得清缓存，应用缓存/浏览器缓存。一些时候或手机能成功，一些时候失败，那清清缓存吧！
 
+1. 浏览器
+
+- 1.android系统自带:打开应用管理`->`点击进入系统浏览器应用`->`清除所有数据；
+- 2.ios系统自带:打开设置`->`点击进入safari`->`点机清除历史记录和网站数据；
+- 3.其他浏览器（UC/QQ/百度/...）:在浏览器设置里面找到清除网站数据即可；
+
+2. webview的缓存和系统自带浏览器一样
+
+3. native app内嵌webview
+
 ---
 
 ###大部分问题阔以通过下面的模拟调试找到答案
@@ -56,7 +68,7 @@ excerpt: 移动时代的到来，
 
 **Android机**
 
-- 首先你得手机需要安装chrome浏览器>32，你的Android >4
+- 首先你得手机需要安装chrome浏览器 > 32，你的Android > 4
 - 打开usb调试
 - 打开开发者模式
 - 链接usb后选择允许
@@ -119,6 +131,8 @@ excerpt: 移动时代的到来，
 
 - 尽情使用语义化标签
 
+---
+
 ###小知识
 
 **PPI:** 
@@ -128,3 +142,16 @@ excerpt: 移动时代的到来，
 >移动页面有两个viewport
     - `layout viewport` 文档原始布局，不随屏幕转动或放缩而变化
     - `virtual viewport`页面可视区域，可视区域会随缩放旋转移动的变化而变化的 
+
+```html
+<meta  name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  user-scalable=no,minimal-ui"/>
+```
+
+width: [pexel_value|device-width] viewport的宽度`[200, 10000]`，默认980px
+height: [pexel_value|device-width] viewport的高度`[223,10000]`
+initial-scale: float_value初始的缩放比例`(0，10]`
+minimum-scale: float_value 可缩小比例临界值
+maximum-scale: float_value 可放大比例临界值
+user-scalable: [`yes`|`no`] 允许用户手动缩放
+target-densitydpi: [`dpi_value`|`device-dpi`|`high-dpi`|`medium-dpi`|`low-dpi`] 目标屏幕的像素密度
+minimal-ui: ios7.x safari中添加的隐藏地址栏和导航栏
