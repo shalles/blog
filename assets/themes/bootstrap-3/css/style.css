@@ -114,6 +114,11 @@ a:hover {
     margin: 0 auto;
     font-family: cursive;
 }
+
+.container .content{
+    font-family: Helvetica;
+}
+
 .posts-box,
 .tools-box {
     float: left;
