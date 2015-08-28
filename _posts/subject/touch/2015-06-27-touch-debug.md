@@ -54,7 +54,7 @@ excerpt: 调试是定位bug完善程序的最佳实践，移动时代里touch端
 
 - 就是这么简单，愉快的查bug吧
 
-![Alt text]({{ BASE_PATH }}/assets/images/safari/20150627-4.png)
+![调试]({{ BASE_PATH }}/assets/images/safari/20150627-4.png)
 
 **对于如微信等app中的webview的调试**
 
