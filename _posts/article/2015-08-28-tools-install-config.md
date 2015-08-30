@@ -13,6 +13,7 @@ excerpt: 开发过程中我们不仅是写代码，我们还要了解我们使�
 [ http://npm.taobao.org/ ](http://npm.taobao.org/)
 
 **npm**
+
 ```
 $ npm --registry=https://regstry.npm.taobao.org
 ```
@@ -35,12 +36,14 @@ $ gem sources -l
 ###sublime其他配置
 
 **一般配置**
+
 ```json
 "translate_tabs_to_spaces": true,
 "draw_white_space": "all",
 ```
 
 **快捷键**
+
 ```
 Ctrl/command+Shift+Enter:光标前插入行。
 Ctrl/command+Shift+[ 折叠代码
@@ -72,6 +75,7 @@ Alt/option+数字：切换打开第N个文件
 ```
 
 ###linux开启ssh支持远程登陆
+
 ```
 1.检查是否安装了ssh 
 $ rpm -qa |grep ssh
@@ -105,6 +109,7 @@ $ /etc/init.d/iptables stop
 [ http:www.cnblog.com/converted/p/3492342.html ](http:www.cnblog.com/converted/p/3492342.html)
 
 **https**
+
 ```js
 server { 
     listen 443; 
@@ -126,6 +131,7 @@ server {
     }
 }
 ```
+
 ###linux改密码
 
 ```
@@ -140,6 +146,7 @@ $ sudo passwd username
 ```
 $ mysql -u root -p
 ```
+
 ```sql
 mysql>use mysql;
 mysql> UPDATE user SET password=PASSWORD("new password") WHERE user='username';
