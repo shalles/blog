@@ -173,3 +173,10 @@ $ mysqladmin -u root "old password" "new password"
 
 [ http://doc.gitlab.com/ce/install/installation.html ](http://doc.gitlab.com/ce/install/installation.html)
 
+###mac brew
+
+[ http://brew.sh/ ](http://brew.sh/)
+
+```
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
