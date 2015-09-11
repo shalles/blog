@@ -8,18 +8,31 @@ excerpt:  前端也可以像nodejs一样使用require moduel.exports的方式来
 ---
 {% include JB/setup %}
 
-#gulp-fecmd
+# gulp-fecmd
 
-###what's gulp-fecmd
-gulp-fecmd 是一个代码基于gulp的转换工具, 是的前端FE可以像nodejs一致的使用CMD(Common Module Definition)require moduel.exports的方式来导出和引用文件且支持模板等
+### what's gulp-fecmd
+gulp-fecmd is a tool that will help FE coding js with CMD(Common Module Definition) free without quote any third-party library in your program;
 
-###install
+### install
 
 ```
 npm install gulp-fecmd
 ```
 
-###Documentation
+**`version`** 1.0.6
+
+add support bower module, and more please look down "gulpfile.js" and "a.js"
+
+**`version`** 1.0.7
+
+support .json
+
+**`version`** 1.0.8
+
+support .es6 
+more infomation [ https://babeljs.io/docs/learn-es2015/ ](https://babeljs.io/docs/learn-es2015/)
+
+### Documentation
 
 ```js
 //gulpfile.js
@@ -33,7 +46,14 @@ gulp.task('scripts', function() {
 
 
     // you should use it before minify or uglify and ...
-    data = data.pipe(fecmd());
+    // support bower module like 
+    // fecmd({
+    //      modulePath: "bower directory"
+    // })
+    // if you don't give modulePath, default is the directory in ".bowerrc" file 
+    // or the folder bower_components in you build path but all the first is you 
+    // scripts folder then bower module
+    data = data.pipe(fecmd()); 
     
 
 
@@ -62,9 +82,17 @@ gulp.task('scripts', function() {
 
 var b = require('lib/b.js'); // '[./]lib/b[.js]'
 var tpl = require('tpl/xx.tpl'); //return a string
+var json = require('data/data.json'); //return the Object
+var es6 = require('lib/file.es6'); // return es5 code
 // or
 // require('c.js');
 // require('d');
+// 
+// if your version is 1.0.6 or newer you can quote module 
+// from bower module lick this require('jquery'), without 
+// extname and without a filename jquery or jquery.js file
+// in the same dir with a.js
+require('jquery');
 
 
 /* do something */
@@ -94,6 +122,27 @@ exports.cc = 23;
 //*/
 //
 ```
+**es6**
+
+```js
+// file.es6
+
+class Calc {
+    constructor() {
+        console.log('Calc constructor');
+    }
+    add(a, b) {
+        return a + b;
+    }
+}
+
+module.exports = Calc;
+
+// usage
+// var c = new Calc();
+// console.log(c.add(1, 2));
+```
+
 
 **template**
 
