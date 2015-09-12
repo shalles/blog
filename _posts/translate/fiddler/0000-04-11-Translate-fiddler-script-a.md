@@ -188,7 +188,7 @@ if (m_SimulateModem) {
 }
 ```
 
-####Access-Control-Allow-Origin 添加同源响应头
+#### Access-Control-Allow-Origin 添加同源响应头
 
 ```js
     // http://www.xxx.com为请求发起源。 可以使用通配符 "*" "/" ...
