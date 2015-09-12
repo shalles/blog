@@ -187,3 +187,10 @@ if (m_SimulateModem) {
     oSession["response-trickle-delay"] = "150"; 
 }
 ```
+
+####Access-Control-Allow-Origin 添加同源响应头
+
+```js
+    // http://www.xxx.com为请求发起源。 可以使用通配符 "*" "/" ...
+    oResponse.headers.Add("Access-Control-Allow-Origin", "http://www.xxx.com");
+```
