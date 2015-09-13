@@ -1,6 +1,6 @@
 ---
 layout: post
-category : ouch
+category : Touch
 title: "touch开发备忘录（一）"
 tagline: "summary"
 tags : [css, media, 响应式布局, 媒体查询]
@@ -83,7 +83,7 @@ excerpt: 写惯了PC前端，移动端开发可能会然你更爽，html5/css3�
 
 ![Alt text]({{ BASE_PATH }}/assets/images/chromium/20150627-1.png)
 
-- 可能要对`appspot.com`翻墙（翻墙的话清点此链接[http://honx.in/_VW5jbokWGgfZEPZO](http://honx.in/_VW5jbokWGgfZEPZO),然后我们愉快的各增加十天vip)
+- 可能要对`appspot.com`翻墙（翻墙的话清点此链接[ http://honx.in/_VW5jbokWGgfZEPZO ](http://honx.in/_VW5jbokWGgfZEPZO),然后我们愉快的各增加十天vip)
 
 - 然后就像在pc上愉快的调试手机上的页面了
 

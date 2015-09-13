@@ -1,6 +1,6 @@
 ---
 layout: post
-category : js
+category : [Notepad, Http]
 title: "HTTP状态码表"
 tagline: "notepad"
 tags : [javascript, 基础, js, 不能不知道]
