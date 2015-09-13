@@ -29,7 +29,7 @@ tagline: 一切都是最好的安排
     </div>
     <div class="tools-box">
         <ul>
-            <li class="profile"><img src="{{ BASE_PATH }}/assets/images/users/shalles-qr.png" alt=""></li>
+            <li class="profile"><img src="{{ BASE_PATH }}/assets/images/users/shalles512.jpg" alt=""></li>
             <li class="say">
                 <h4>shalles say:</h4>
                 <p>just do IT, finally, finish the game engining dream</p>
