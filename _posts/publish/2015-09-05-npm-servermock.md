@@ -4,7 +4,7 @@ category : [Tools, Publish]
 title : "servermock"
 tagline: "利其器"
 tags : [mock, server, mockjson, FE]
-excerpt:  静态文件服务，提供mock数据，支持mockjson, json, js。
+excerpt:  静态文件服务，提供mock数据，支持mockjson, json, js; pagemack,支持后端模板渲染php,vm
 ---
 {% include JB/setup %}
 
@@ -27,14 +27,13 @@ bits of php grammar like
 ```php
 <?php echo is_null($variable)? "": "<em>".$variable. "</em>元"; ?>
 <?php  echo $var; ?>
-...
 ```
 
 support most function, variable and bits of logic expression
 
 ## Install
 
-```shell
+```js
 sudo npm install servermock -g  
 
 //启动命令(start)
