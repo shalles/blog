@@ -1,7 +1,7 @@
 ---
 layout: post
 category : [Tools, Publish]
-title : "servermock"
+title : "servermock 2.x.x"
 tagline: "利其器"
 tags : [mock, server, mockjson, FE]
 excerpt:  静态文件服务，提供mock数据，支持mockjson, json, js; pagemack,支持后端模板渲染php,vm
