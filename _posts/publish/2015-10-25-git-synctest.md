@@ -156,6 +156,6 @@ var wsServer = 'ws://{{ origin }}'
  */
 function synctest__(synctest_origin){
 //压缩后的synctest.js
-function(a){function h(a){... 
+//function(a){function h(a){//... 
 }
 ```
