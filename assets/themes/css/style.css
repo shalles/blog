@@ -1,0 +1,277 @@
+/* Custom container */
+
+/* Replaced with normal container and standard footer */
+
+/*.container-narrow {
+            margin: 0 auto;
+  max-width: 700px; }
+
+.container-narrow > hr {
+  margin: 30px 0; }
+*/
+
+/* Replaced with standard BS3 Navbar */
+
+/*.navbar .nav {
+  float: right; }*/
+
+/* Jekyll Bootstrap Colors */
+h1,
+h2,
+h3,
+h4 {
+    color: #f22430;
+}
+#footer {
+
+    /*background-color: #fdcd60;*/
+}
+
+/* posts index */
+.post > h3.title {
+    position: relative;
+    padding-top: 10px;
+}
+.post > h3.title span.date {
+    position: absolute;
+    right: 0;
+    font-size: 0.9em;
+}
+.post > .more {
+    margin: 10px 0;
+    text-align: left;
+}
+
+/* post-full*/
+.post-full .date {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* tag_box */
+.tag_box {
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+}
+.tag_box li {
+    line-height: 28px;
+}
+.tag_box li i {
+    opacity: 0.9;
+}
+.tag_box.inline li {
+    float: left;
+}
+.tag_box a {
+    padding: 3px 6px;
+    margin: 2px;
+    background: #eee;
+    color: #555;
+    border-radius: 3px;
+    text-decoration: none;
+    border: 1px dashed #cccccc;
+}
+.tag_box a span {
+    vertical-align: super;
+    font-size: 0.8em;
+}
+.tag_box a:hover {
+    background-color: #e5e5e5;
+}
+.tag_box a.active {
+    background: #57A957;
+    border: 1px solid #4c964d;
+    color: #FFF;
+}
+
+/*----------------------------------*/
+body {
+    background-color: #fefefe;
+    color: #666;
+}
+ul,
+li {
+    padding: 0;
+    margin-top: 0;
+    list-style: none;
+}
+a:hover {
+    color: #18BC9C
+}
+
+/*ellipsis*/
+.posts .title,
+.posts .artible-catgory {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.page-header h1 {
+    color: #666;
+}
+.container {
+    margin: 0 auto;
+    font-family: cursive;
+}
+
+.container .content{
+    font-family: Helvetica;
+}
+
+.posts-box,
+.tools-box {
+    float: left;
+    overflow: hidden;
+}
+.tools-box li,
+.posts li {
+    padding: 16px;
+    margin: 10px 5px;
+    background-color: #fff;
+    box-shadow: #aaa 1px 1px 10px;
+    overflow: hidden;
+}
+.posts {
+    overflow: hidden;
+}
+.posts .artible-catgory {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px 20px;
+    max-width: 80px;
+    background-color: #84bbb8;
+    color: #fff;
+    transition: all 1.2s cubic-bezier(0.85, 1.59, 0.9, 0.4) 0s;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.artible-catgory:hover {
+    text-shadow: #fff 16px 0px 1px;
+    cursor: none;
+}
+.posts li {
+    float: left;
+    min-height: 146px;
+    max-height: 312px;
+    position: relative;
+    border-radius: 0 10px 0 0;
+}
+.posts .title {
+    padding: 2px 60px 2px 0;
+    margin-bottom: 6px;
+    border-bottom: #efefef 1px solid;
+}
+.posts .article-excerpt {
+    margin: 16px 0;
+    overflow: hidden;
+    font-family: 微软雅黑;
+    font-size: 12px;
+    height:34px;
+}
+.posts .more {
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+}
+.tools-box li {
+    width: 220px;
+    margin-top: 10px;
+    vertical-align: top;
+}
+.tools-box .profile img {
+    width: 100%;
+}
+
+.article-img {
+    position: relative;
+    height:182px;
+    padding: 2%;
+    text-align: center;
+
+}
+.article-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: 182px;
+    z-index: 10;
+    transition: all 1.2s ease-in 0s;
+}
+.article-img img:hover{
+    height: 320px;
+}
+
+@media screen and (min-width:1200px) {
+
+    /* CSS Styles */
+    .container {
+        max-width: 1200px;
+    }
+    .posts-box {
+        width: 78%;
+    }
+    .posts li {
+        width: 48%;
+    }
+}
+@media screen and (min-width:1000px) and (max-width:1200px) {
+
+    /* CSS Styles */
+    .container {
+        min-width: 1000px;
+        max-width: 1200px;
+    }
+    .posts-box {
+        width: 76%;
+    }
+    .posts li {
+        width: 46%;
+    }
+}
+@media screen and (min-width:768px) and (max-width:1000px) {
+
+    /* CSS Styles */
+    .container {
+        min-width: 768px;
+        max-width: 1000px;
+    }
+    .posts-box,
+    .tools-box {
+        float: none;
+        margin: 0 auto;
+        width: 95%;
+    }
+    .posts-box .posts li {
+        width: 48%;
+    }
+    .tools-box li {
+        display: inline-block;
+        width: 220px;
+    }
+}
+@media screen and (max-width:768px) {
+
+    /* CSS Styles */
+    .container {
+        min-width: 200px;
+        max-width: 768px;
+    }
+    .posts-box,
+    .tools-box {
+        float: none;
+        margin: 0 auto;
+        width: 100%;
+    }
+    .posts li {
+        width: 96%;
+    }
+    .tools-box li {
+        display: inline-block;
+        width: 220px;
+    }
+}
