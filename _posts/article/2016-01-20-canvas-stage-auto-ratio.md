@@ -77,6 +77,6 @@ canvas画布作画时我们需要对多种像素密度的屏幕做适配，否�
 
 ### 活用Demo
 
-<iframe height='266' scrolling='no' src='//codepen.io/shalles/embed/zrJEyL/?height=266&theme-id=0&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/shalles/pen/zrJEyL/'>zrJEyL</a> by shalles (<a href='http://codepen.io/shalles'>@shalles</a>) on <a href='http://codepen.io'>CodePen</a>.
+<iframe height='360' scrolling='no' src='//codepen.io/shalles/embed/zrJEyL/?height=360&theme-id=0&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/shalles/pen/zrJEyL/'>zrJEyL</a> by shalles (<a href='http://codepen.io/shalles'>@shalles</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
 
