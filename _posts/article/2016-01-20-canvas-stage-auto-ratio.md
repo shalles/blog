@@ -4,11 +4,11 @@ category : [Solution]
 title : "canvas动画的一些适配技巧"
 tagline: "方案"
 tags : [solution, canvas, ratio, 自适应, 抗锯齿, 动画]
-excerpt: canvas画布作画时我们需要对多种像素密度的屏幕做适配，否者可能出现锯齿而影响视觉效果，这里提供一个使用canvas绘图的适配方法
+excerpt: canvas画布作画时我们需要对多种像素密度的屏幕做适配，否者可能出现锯齿而影响视觉效果，这里提供一个使用canvas绘图的优化和适配方法
 ---
 {% include JB/setup %}
 
-canvas画布作画时我们需要对多种像素密度的屏幕做适配，否者可能出现锯齿而影响视觉效果，这里提供一个使用canvas绘图的适配方法
+canvas画布作画时我们需要对多种像素密度的屏幕做适配，否者可能出现锯齿而影响视觉效果，这里提供一些在使用canvas绘图的优化和适配方法
 
 ```html
 <div id="stage" class="stage">
