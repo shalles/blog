@@ -10,6 +10,8 @@ excerpt: canvas画布作画时我们需要对多种像素密度的屏幕做适�
 
 canvas画布作画时我们需要对多种像素密度的屏幕做适配，否者可能出现锯齿而影响视觉效果，这里提供一些在使用canvas绘图的优化和适配方法
 
+### 当我们在创建一个canvas动画或游戏(交互动画)的时候我们可以考虑优化canvas的重绘模块
+
 ```html
 <div id="stage" class="stage">
 	<!-- 背景层，一般不会改变的背景图等，基本不更新 -->
@@ -45,8 +47,8 @@ canvas画布作画时我们需要对多种像素密度的屏幕做适配，否�
 	var stageH = 400, stageW = 360;
 	var stageEle = document.getElementById('stage');
 
-	var bgEle = stageEle.querySelector('.layer-background');
-	var aniEle = stageEle.querySelector('.layer-game');
+	var bgEle = stageEle.querySelector('.layer-bg');
+	var aniEle = stageEle.querySelector('.layer-ani');
 	var uiEle = stageEle.querySelector('.layer-ui');
 
 	// 这里有两种理解：
@@ -72,3 +74,9 @@ canvas画布作画时我们需要对多种像素密度的屏幕做适配，否�
 	// 然后以正常的stageH为高, stageW为宽的大小去绘画。不用理会当前的是几倍图画布
 
 ```
+
+### 活用Demo
+
+<iframe height='266' scrolling='no' src='//codepen.io/shalles/embed/zrJEyL/?height=266&theme-id=0&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/shalles/pen/zrJEyL/'>zrJEyL</a> by shalles (<a href='http://codepen.io/shalles'>@shalles</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+
