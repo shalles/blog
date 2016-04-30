@@ -19,7 +19,10 @@ excerpt:  多设备同步测试，妈妈再也不用担心你设备太多测得�
 [ home page ](http://shalles.github.io/synctest/) 
 [ code source ](https://github.com/shalles/synctest)
 
-<video src="http://shalles.github.io/assets/video/synctest/servermock_synctest.mp4" autoplay controls></video>
+<section style="text-align: center">
+    <video style="width: 100%; max-width: 600px;" src="http://shalles.github.io/assets/video/synctest/servermock_synctest.mp4" autoplay controls></video>
+</section>
+
 
 ### Contribute code
 
