@@ -150,6 +150,7 @@ var wsServer = 'ws://{{ origin }}'
 ```
 
 **如lib中的 synctest_out.min.js**
+
 ```js
 /**
  * servermock synctest plugin 多平台同步测试：实现操作一个平台多个平台同步事件操作
