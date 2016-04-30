@@ -11,7 +11,7 @@ excerpt:  开发微信，支付宝，QQ，端等hybrid应用时，我们会用�
 <style>
 	img {
 		width: auto;
-		max-width:50%;
+		max-width:100%;
 	}
 </style>
 
@@ -27,15 +27,15 @@ excerpt:  开发微信，支付宝，QQ，端等hybrid应用时，我们会用�
 
 打开chrome浏览器的扩展页, 将simulate-platform-header.crx文件拖动到该页上, 点击add extention
 
-![安装simulate-platform-header.crx](http://shalles.github.io/assets/images/article/2.pic.jpg)
+<img style="max-width: 100%" src="http://shalles.github.io/assets/images/article/2.pic.jpg" alt="安装simulate-platform-header.crx">
 
 ### 使用
 
 然后打开移动开发模式并选择需要模拟的平台header
 
-![开始使用](http://shalles.github.io/assets/images/article/3.pic.jpg)
+<img style="width: 100px" src="http://shalles.github.io/assets/images/article/3.pic.jpg" alt="开始使用">
 
-![demo](http://shalles.github.io/assets/images/article/1.pic.jpg)
+<img style="width: 100%; max-width: 320px;" src="http://shalles.github.io/assets/images/article/1.pic.jpg" alt="demo">
 
 ### 如果有其他需要自己改代码安装
 
