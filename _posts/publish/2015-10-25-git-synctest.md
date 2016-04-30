@@ -19,6 +19,8 @@ excerpt:  多设备同步测试，妈妈再也不用担心你设备太多测得�
 [ home page ](http://shalles.github.io/synctest/) 
 [ code source ](https://github.com/shalles/synctest)
 
+<video src="http://shalles.github.io/assets/video/synctest/servermock_synctest.mp4" autoplay controls></video>
+
 ### Contribute code
 
 作为[servermock](https://github.com/shalles/servermock/blob/master/README.md)插件使用,[安装及使用详情参见servermock](https://www.npmjs.com/package/servermock)
@@ -61,7 +63,7 @@ excerpt:  多设备同步测试，妈妈再也不用担心你设备太多测得�
     function __addEventListener(type, listener, useCapture) {
         var self = this;
         
-        //重写时间监听 存储时间listener 便于接收到server的广播后重构还原事件
+        //重写事件监听 存储事件listener 便于接收到server的广播后重构还原事件
         self[eventDomID] || (self[eventDomID] = ++eventID);
 
         ((eventData[eventID] || (eventData[eventID] = {}))[type] ||
@@ -72,7 +74,7 @@ excerpt:  多设备同步测试，妈妈再也不用担心你设备太多测得�
                 listener.call(self, e);
             }
         );
-        //重写时间监听 编辑事件并发送 server端接收到后广播给其他设备上的页面监听者
+        //重写事件监听 编辑事件并发送 server端接收到后广播给其他设备上的页面监听者
         var callback = function(e) {
             try{
                 (e.type === 'scroll2') ?
@@ -159,3 +161,5 @@ function synctest__(synctest_origin){
 //function(a){function h(a){//... 
 }
 ```
+
+
