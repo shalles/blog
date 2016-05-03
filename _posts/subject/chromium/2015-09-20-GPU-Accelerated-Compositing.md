@@ -98,7 +98,7 @@ RenderLayers很好的形成树状层次结构。其根节点是RenderLayer对应
 
 从这里开始本文档中的“layer”是指一个通用的CC layer，因为对于硬件合成来说这些是最有趣的 - 但不要被愚弄，在其他地方，当有人说“layer”，他们可能会被提及的任何上述的结构中！
 
-![The Compositing Forest]({{ BASE_PATH }}/assets/images/chromium/compositor-forest.png)
+![The Compositing Forest](https://lh5.googleusercontent.com/eLlgjXLQbW-c2JWxfK0VxXbmV2-D90ub4dXYMblpHdyVyM_6a12JdfQKiokPrTcB-2UOn284A3teHK4P0e9Xlmm5uSxA7utj6Pggf7T-J7uxwc8iBPopZ7vtcCRYGvtteQ)
 
 #### 合成森林
 
