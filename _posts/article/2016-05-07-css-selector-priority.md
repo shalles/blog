@@ -15,28 +15,27 @@ excerpt: 在开发中我们经常会遇到元素样式覆盖问题，有可能�
 很常见的一种场景是，我们在开发中有一些分支，且这些分支在样式上有一定的差距，如果我们一个元素一个元素的去更改class也是一种灾难。通常我们会在这些可能变化的元素的公共父级去改变这个class标记
 
 如：
+
 ```scss
 .main{
-	key: val_1;
+	color: #fff;
 }
 .main .a{
-	key: val_1;
+	color: #ff0;
 }
 .main .b{
-	key: val_1;
+	color: #f0f;
 }
-//...
 
 .main.branch2{
-	key: val_2;
+	color: #eee;
 }
 .main.branch2 .a{
-	key: val_2;
+	color: #ee0;
 }
 .main.branch2 .b{
-	key: val_2;
+	color: #e0e;
 }
-//...
 ```
 
 当然css选择器的优先级不止能做这个，了解css选择器的优先级我们才能更加正确有效的coding
