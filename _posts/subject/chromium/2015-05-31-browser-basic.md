@@ -58,6 +58,7 @@ inline的元素的包含块是其祖先元素的第一个inline元素和最后�
 #### 影子DOM
 
 它允许在文档（document）渲染时插入一棵DOM元素子树，但是这棵子树不在主DOM树中
+
 ```js
 if (Element.prototype.createShadowRoot){
     shadowRoot = componentEle.createShadowRoot();
