@@ -46,13 +46,13 @@ Blink渲染引擎的源代码量是巨大的，复杂的，有些几乎没有记
 
 RenderObjects共享同一个坐标空间（例如受同一个CSS变换影响）通常属于同一RenderLayer。RenderLayers的存在使得页面的元素以正确的顺序进行合成，进而正确地显示重叠内容，半透明元件等或其他一些条件会触发创建新RenderLayer来用于特定渲染对象，就像[RenderBoxModelObject::requiresLayer()](https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/core/rendering/RenderBoxModelObject.h)中定义和重写的一些派生类。渲染对象一定会建立RenderLayer的常见情况：
 
-1.它是用于页根对象 <br> 
+1.它是页根对象 <br> 
 2.它有明确的CSS position属性（相对，绝对或变换）<br>
-3.它是透明<br>
-4.有溢出，阿尔法口罩或反射<br>
+3.它是透明的<br>
+4.有溢出<br>
 5.有一个CSS滤镜<br>
 6.对应于`<canvas>`元素具有3D（WebGL的）上下文或加速的2D背景<br>
-7.对应一个`<video>`元素
+7.对应于`<video>`元素
 
 注意，RenderObjects和RenderLayers之间并不是一对一的对应关系。一个特别的渲染对象会给他分配一个为它创建的RenderLayer，或者使用第一个具有RenderLayer的祖先RenderObject的RenderLayer。
 
