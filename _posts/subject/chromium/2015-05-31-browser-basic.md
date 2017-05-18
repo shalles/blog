@@ -68,6 +68,7 @@ if (Element.prototype.createShadowRoot){
     componentEle.appendChild(statusBarEle);
     componentEle.appendChild(headerEle);
 }
+domNode.appendChild(shadowRoot)
 ```
 
 [**Demo**](https://github.com/shalles/FET-chrome-extention/blob/master/simulate-platform-header/src/js/content.js)

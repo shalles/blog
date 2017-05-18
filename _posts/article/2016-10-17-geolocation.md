@@ -1,6 +1,6 @@
 ---
 layout: post
-category : [Tools,Fiddler]
+category : [Skill,Js]
 title : "Geolocation地图定位问题"
 tagline: "skill"
 tags : [geolocation, https, 地图定位, H5定位, 支付宝定位, 微信定位, 位置定位]
