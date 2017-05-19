@@ -4,7 +4,7 @@ category : [Notepad, Http]
 title: "计算机网络在浏览器中的应用"
 tagline: "notepad"
 tags : [javascript, 基础, js, 不能不知道]
-excerpt: 前端是一个很容易上手，但很多人做了很久的前端还是没有掌握javascript的一些重要的基础知识
+excerpt: 
 ---
 {% include JB/setup %}
 
