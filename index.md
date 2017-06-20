@@ -31,17 +31,15 @@ tagline: 一切都是最好的安排
         <ul>
             <li class="profile"><img src="{{ BASE_PATH }}/assets/images/users/shalles512.jpg" alt=""></li>
             <li class="say">
-                <h4>shalles say:</h4>
+                <h4>:</h4>
                 <p>just do IT, finally, finish the game engining dream</p>
                 <p>When the capacity can't meet your ambitions, please calm down to study</p>
             </li>
             <li class="recommend">
-                <h4>blog tenet:</h4>
-                <p>1.合抱之木,生于毫末</p>
-                <p>2.工欲善其事,必先利其器</p>
-                <p>3.闻道有先后,树业有专攻</p>
-                <p>4.博学者,善索引,博而有专</p>
-                <p>5.这是一条很长的路,游戏人生</p>
+                <h4>:</h4>
+                <p>1.生于毫末</p>
+                <p>2.先利其器</p>
+                <p>5.游戏人生</p>
             </li>
         </ul>
     </div>
