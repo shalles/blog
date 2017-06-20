@@ -1,7 +1,7 @@
 ---
 layout: page
 title: shalles
-tagline: 一切都是最好的安排
+tagline: 写笔记的方式更适合我，刚兴趣请转到 https://note.shalles.org
 ---
 {% include JB/setup %}
 
