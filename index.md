@@ -1,7 +1,7 @@
 ---
 layout: page
 title: shalles
-tagline: 
+tagline: 一切都是最好的安排
 ---
 {% include JB/setup %}
 
