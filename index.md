@@ -1,10 +1,11 @@
 ---
 layout: page
 title: shalles
-tagline: 写笔记的方式更适合我，请转到 https://note.shalles.org
+tagline: 
 ---
 {% include JB/setup %}
-[https://note.shalles.org ](https://note.shalles.org)
+
+**写笔记的方式更适合我，后续请转到 [ https://note.shalles.org ](https://note.shalles.org)**
 
 <div class="container">
     <div class="posts-box">
