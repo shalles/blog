@@ -1,7 +1,7 @@
 ---
 layout: page
 title: shalles
-tagline: 写笔记的方式更适合我，刚兴趣请转到 https://note.shalles.org
+tagline: 写笔记的方式更适合我，请转到 [https://note.shalles.org](https://note.shalles.org)
 ---
 {% include JB/setup %}
 
