@@ -5,7 +5,7 @@ tagline: 一切都是最好的安排
 ---
 {% include JB/setup %}
 
-**写笔记的方式更适合我，后续请转到 [ https://note.shalles.org ](https://note.shalles.org)**
+**写笔记的方式更适合，后续请转到 [ https://note.alesir.com ](https://note.alesir.com)**
 
 <div class="container">
     <div class="posts-box">
