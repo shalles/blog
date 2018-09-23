@@ -34,7 +34,7 @@ tagline: 一切都是最好的安排
             <li class="profile"><img src="{{ BASE_PATH }}/assets/images/users/shalles512.jpg" alt=""></li>
             <li class="say">
                 <h4>:</h4>
-                <p>just do IT, finally, finish the game engining dream</p>
+                <p>just do IT, game engining dream</p>
                 <p>When the capacity can't meet your ambitions, please calm down to study</p>
             </li>
             <li class="recommend">
