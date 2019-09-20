@@ -77,8 +77,7 @@ res.setHeader("Access-Control-Allow-Origin", "http://localhost:8088");
 <script crossorigin="anonymous" src="http://localhost/src/scripts/index.js"></script>
 ```
 
-要是使用了外部CDN（买服务，不是自己的服务器）那就麻烦了，需要在CDN服务器上设置CORS的header
-还好我们使用的是https，https下的资源一般不会放到CDN。
+如果使用了CDN，在对应厂商的CDN管理平台配置文件的CORS Header即可，一般配置为`Access-Control-Cross-Origin: *`。
 
 
 参考文章
